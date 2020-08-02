@@ -4,6 +4,8 @@ let prompt = require('prompt-sync')();
 let namePattern = new RegExp("^[A-Z]{1}[A-Za-z]{2}");
 let emailPattern = new RegExp("^[a-zA-Z0-9]+([.+-_]?[a-zA-Z0-9]+)*@([0-9a-zA-Z][-]?)+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$");
 let mobilePAttern = new RegExp("[0-9]{2}[ |-]?[0-9]{10}$");
+let passwordPAttern = new RegExp("[a-zA-z0-9@#$%]{8,}$");
+
 //First Name Validation.
 while(true){
     let name = prompt("Enter First Name: ");
@@ -42,6 +44,17 @@ while(true){
     let mobile = prompt("Enter mobile number : ");
     if(!mobilePAttern.test(mobile))
         console.log("Invalid input, example : 91 9876543210");
+    else{
+        console.log("Saved.\n");
+           break;  
+        }
+}
+
+//Password Validation
+while(true){
+    let password = prompt("Enter password : ");
+    if(!passwordPAttern.test(password))
+        console.log("Invalid input");
     else{
         console.log("Saved.\n");
            break;  
