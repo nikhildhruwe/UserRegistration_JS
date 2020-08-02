@@ -4,7 +4,7 @@ let prompt = require('prompt-sync')();
 let namePattern = new RegExp("^[A-Z]{1}[A-Za-z]{2}");
 let emailPattern = new RegExp("^[a-zA-Z0-9]+([.+-_]?[a-zA-Z0-9]+)*@([0-9a-zA-Z][-]?)+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$");
 let mobilePAttern = new RegExp("[0-9]{2}[ |-]?[0-9]{10}$");
-let passwordPAttern = new RegExp("((?=.*[A-Z])([a-zA-z0-9@#$%]{8,}$))");
+let passwordPAttern = new RegExp("((?=.*[A-Z])(?=.*\\d)(?=.*[a-z@#$%]).{8,}$)");
 
 //First Name Validation.
 while(true){
